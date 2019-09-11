@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -amFv echo -e
+ls -amFv /n
