@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Script that configures a new Ubuntu machine to respect above requirements
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo echo -e 'Holberton School' > /var/www/html/index.html
+sudo mkdir /var/www/html/redirect_me
+
+sudo /etc/init.d/nginx start
