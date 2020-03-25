@@ -2,5 +2,5 @@
 # Script that configures a new Ubuntu machine to respect above requirements
 sudo apt-get -y update
 sudo apt-get -y install nginx
-sudo echo "Holberton School" > /var/www/html/index.html
-sudo service nginx start
+echo "Holberton School" > /var/www/html/index.html
+service nginx start
