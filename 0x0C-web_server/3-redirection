@@ -2,6 +2,6 @@
 # Script that configures a new Ubuntu machine to respect above requirements
 sudo apt-get update
 sudo apt-get -y install nginx
-sudo echo -e 'Holberton School' > /var/www/html/index.html
+echo -e 'Holberton School' > /var/www/html/index.html
 sudo sed -i '20i\\trewrite ^/redirect_me$ https://www.youtube.com/ permanent;\n' /etc/nginx/sites-available/default
-sudo /etc/init.d/nginx start
+service nginx start
