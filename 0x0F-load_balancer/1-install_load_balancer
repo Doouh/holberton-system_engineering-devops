@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Install and configure HAproxy
+apt-get install haproxy=1.9.\*
+
