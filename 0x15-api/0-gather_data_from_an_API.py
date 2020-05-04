@@ -8,15 +8,12 @@ import requests
 from sys import argv
 
 if __name__ == '__main__':
-    try:
-        url = 'https://jsonplaceholder.typicode.com/users/' + argv[1]
-        name = requests.get(url).json()['name']
-        url = 'https://jsonplaceholder.typicode.com/todos?userId=' + argv[1]
-        tasks = requests.get(url).json()
-        tasksCompleted = list(filter(lambda x: x['completed'] is True, tasks))
-        print('Employee {} is done with tasks({}/{}):'.format(name,
-              len(tasksCompleted), len(tasks)))
-        for task in tasksCompleted:
-            print('     {}'.format(task['title']))
-    except Exception:
-        pass
+    url = 'https://jsonplaceholder.typicode.com/users/' + argv[1]
+    name = requests.get(url).json()['name']
+    url = 'https://jsonplaceholder.typicode.com/todos?userId=' + argv[1]
+    tasks = requests.get(url).json()
+    tasksCompleted = list(filter(lambda x: x['completed'] is True, tasks))
+    print('Employee {} is done with tasks({}/{}):'.format(name,
+          len(tasksCompleted), len(tasks)))
+    for task in tasksCompleted:
+        print('\t {}'.format(task['title']))
