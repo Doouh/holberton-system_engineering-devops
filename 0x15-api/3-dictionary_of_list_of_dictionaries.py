@@ -12,7 +12,7 @@ if __name__ == '__main__':
     users = requests.get(url).json()
     allTasks = {}
     for user in users:
-        url = 'https://jsonplaceholder.typicode.com/todos?UserId=' +\
+        url = 'https://jsonplaceholder.typicode.com/todos?userId=' +\
                str(user['id'])
         tasks = requests.get(url).json()
         ls = []
