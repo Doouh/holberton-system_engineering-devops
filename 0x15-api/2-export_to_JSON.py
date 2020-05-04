@@ -12,9 +12,9 @@ if __name__ == '__main__':
     username = requests.get(url).json().get('username')
     url = 'https://jsonplaceholder.typicode.com/todos?userId=' + argv[1]
     tasks = requests.get(url).json()
-    dic = {}
     ls = []
     for task in tasks:
+        dic = {}
         dic['task'] = task['title']
         dic['completed'] = task['completed']
         dic['username'] = username
