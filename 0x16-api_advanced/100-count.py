@@ -15,6 +15,7 @@ def count_words(subreddit, word_list, dict_list={}, after=''):
     if 'error' in json or json['data']['children'] == []:
         return None
 
+    word_list = set(word_list)
     if len(dict_list) == 0:
         for word in word_list:
             dict_list[word] = 0
