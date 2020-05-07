@@ -36,12 +36,13 @@ def count_words(subreddit, word_list, dict_list={}, after=''):
         while ordered is False:
             ordered = True
             for i in range(size):
-                if (i < size - 1 and sorted_dict[i][1] == sorted_dict[i+1][1]
-                        and sorted_dict[i][0] > sorted_dict[i+1][0]):
-                    ordered = False
-                    aux = sorted_dict[i]
-                    sorted_dict[i] = sorted_dict[i+1]
-                    sorted_dict[i+1] = aux
+                if (i < size - 1):
+                    if (sorted_dict[i][1] == sorted_dict[i+1][1]
+                            and sorted_dict[i][0] > sorted_dict[i+1][0]):
+                        ordered = False
+                        aux = sorted_dict[i]
+                        sorted_dict[i] = sorted_dict[i+1]
+                        sorted_dict[i+1] = aux
 
         for value in sorted_dict:
             if value[1] > 0:
