@@ -11,7 +11,7 @@ def top_ten(subreddit):
     url = 'https://www.reddit.com/r/'+subreddit+'/hot.json'
     json = requests.get(url, headers={'user-agent': 'Mozilla/5.0'}).json()
     
-    if 'error' in json:
+    if json['data']['children'] == []:
         print('None')
         return
 
