@@ -10,9 +10,9 @@ import requests
 def top_ten(subreddit):
     url = 'https://www.reddit.com/r/'+subreddit+'/hot.json'
     json = requests.get(url, headers={'user-agent': 'Mozilla/5.0'}).json()
-    
-    if json['data']['children'] == []:
-        print('None')
+
+    if 'error' in json or json['data']['children'] == []:
+        print(None)
         return
 
     children = json['data']['children']
