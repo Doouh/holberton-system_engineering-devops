@@ -23,9 +23,10 @@ def count_words(subreddit, word_list, dict_list={}, after=''):
     for child in children:
         tokens = child['data']['title'].upper()
         tokens = tokens.split()
-        for word in word_list:
-            if word.upper() in tokens:
-                dict_list[word] += 1
+        for token in tokens:
+            for word in word_list:
+                if token == word.upper():
+                    dict_list[word] += 1
     after = json['data']['after']
     if after is None:
         sorted_dict = sorted(dict_list.items(), key=operator.itemgetter(1),
