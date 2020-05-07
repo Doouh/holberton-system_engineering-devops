@@ -11,8 +11,8 @@ def top_ten(subreddit):
     url = 'https://www.reddit.com/r/'+subreddit+'/hot.json'
     json = requests.get(url, headers={'user-agent': 'Mozilla/5.0'}).json()
     
-    if 'error' in json and json['error'] == 404:
-        print(None)
+    if 'error' in json:
+        print('None')
         return
 
     children = json['data']['children']
